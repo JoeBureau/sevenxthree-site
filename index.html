@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sevenXthree — Speech Technology Platform</title>
-<meta name="description" content="sevenXthree is a speech technology platform for capturing, transcribing, and reviewing spoken audio. Currently in active development.">
+<title>sevenXthree — Coming soon</title>
+<meta name="description" content="sevenXthree — coming soon.">
 <link rel="canonical" href="https://sevenxthree.com/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0d1420">
@@ -12,11 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sevenxthree.com/">
 <meta property="og:site_name" content="sevenXthree">
-<meta property="og:title" content="sevenXthree — Speech Technology Platform">
-<meta property="og:description" content="A speech technology platform for capturing, transcribing, and reviewing spoken audio. Currently in active development.">
+<meta property="og:title" content="sevenXthree — Coming soon">
+<meta property="og:description" content="sevenXthree — coming soon.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sevenXthree — Speech Technology Platform">
-<meta name="twitter:description" content="A speech technology platform for capturing, transcribing, and reviewing spoken audio.">
+<meta name="twitter:title" content="sevenXthree — Coming soon">
+<meta name="twitter:description" content="sevenXthree — coming soon.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -24,7 +24,6 @@
 <style>
   :root {
     --bg: #0d1420;
-    --bg-soft: #131d2c;
     --line: rgba(255, 255, 255, 0.10);
     --ink: #eef3f8;
     --ink-dim: #93a4b8;
@@ -106,13 +105,12 @@
   }
 
   /* ---- Hero ---- */
-  h2.lede {
-    margin: 0 0 1.25rem;
-    font-size: clamp(2rem, 7vw, 3.15rem);
+  .lede {
+    margin: 0 0 2.75rem;
+    font-size: clamp(2.25rem, 9vw, 3.75rem);
     font-weight: 600;
     line-height: 1.12;
     letter-spacing: -0.025em;
-    max-width: 30ch;
   }
 
   .lede em {
@@ -123,36 +121,8 @@
     color: transparent;
   }
 
-  p.sub {
-    margin: 0 0 2.25rem;
-    font-size: clamp(1.02rem, 2.4vw, 1.16rem);
-    color: var(--ink-dim);
-    max-width: 46ch;
-  }
-
-  /* ---- Status pill ---- */
-  .status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 2.75rem;
-    padding: 0.4rem 0.9rem 0.4rem 0.75rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--bg-soft);
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--ink-dim);
-    letter-spacing: 0.01em;
-  }
-
-  .status__dot {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background: var(--brand-c);
-    box-shadow: 0 0 0 3px rgba(95, 184, 58, 0.18);
-  }
+  /* Dots stay solid ink so the gradient reads as the words alone. */
+  .lede__dots { color: var(--ink-dim); }
 
   /* ---- Contact ---- */
   .contact {
@@ -213,14 +183,7 @@
       <p class="brand__name">seven<b>X</b>three</p>
     </div>
 
-    <span class="status"><span class="status__dot" aria-hidden="true"></span>In active development</span>
-
-    <h2 class="lede">A platform for working with <em>spoken audio</em>.</h2>
-
-    <p class="sub">
-      We build software for capturing, transcribing, and reviewing speech.
-      More about the platform will be shared here as it becomes available.
-    </p>
+    <h1 class="lede"><em>Coming soon</em><span class="lede__dots" aria-hidden="true">...</span></h1>
   </header>
 
   <main class="contact">
