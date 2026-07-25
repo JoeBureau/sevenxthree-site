@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="sevenXthree">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6fb2"/>
+      <stop offset="55%" stop-color="#2bb3b3"/>
+      <stop offset="100%" stop-color="#5fb83a"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="256" height="256" rx="52" ry="52" fill="url(#g)"/>
+  <!-- Waveform glyph: the platform mark for the public site, on the shared
+       sevenXthree gradient tile used by studio/editor/ops. -->
+  <g fill="none" stroke="#ffffff" stroke-width="15" stroke-linecap="round">
+    <path d="M60 120 V136"/>
+    <path d="M92 96 V160"/>
+    <path d="M128 68 V188"/>
+    <path d="M164 96 V160"/>
+    <path d="M196 114 V142"/>
+  </g>
+</svg>

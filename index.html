@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sevenXthree — Speech Technology Platform</title>
+<meta name="description" content="sevenXthree is a speech technology platform for capturing, transcribing, and reviewing spoken audio. Currently in active development.">
+<link rel="canonical" href="https://sevenxthree.com/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0d1420">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sevenxthree.com/">
+<meta property="og:site_name" content="sevenXthree">
+<meta property="og:title" content="sevenXthree — Speech Technology Platform">
+<meta property="og:description" content="A speech technology platform for capturing, transcribing, and reviewing spoken audio. Currently in active development.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sevenXthree — Speech Technology Platform">
+<meta name="twitter:description" content="A speech technology platform for capturing, transcribing, and reviewing spoken audio.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #0d1420;
+    --bg-soft: #131d2c;
+    --line: rgba(255, 255, 255, 0.10);
+    --ink: #eef3f8;
+    --ink-dim: #93a4b8;
+    --brand-a: #1f6fb2;
+    --brand-b: #2bb3b3;
+    --brand-c: #5fb83a;
+    --focus: #2bb3b3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Soft brand glow behind the fold. Decorative only. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20% -10% auto -10%;
+    height: 70vh;
+    background:
+      radial-gradient(50% 60% at 22% 0%, rgba(31, 111, 178, 0.30), transparent 70%),
+      radial-gradient(45% 55% at 68% 8%, rgba(43, 179, 179, 0.22), transparent 72%),
+      radial-gradient(40% 50% at 92% 0%, rgba(95, 184, 58, 0.14), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  header { padding-top: clamp(3rem, 12vh, 7rem); }
+
+  /* ---- Wordmark ---- */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: clamp(2rem, 6vh, 3.25rem);
+  }
+
+  .brand__mark {
+    flex: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.7rem;
+  }
+
+  .brand__name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .brand__name b {
+    font-weight: 600;
+    background: linear-gradient(100deg, var(--brand-a), var(--brand-b) 55%, var(--brand-c));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---- Hero ---- */
+  h2.lede {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2rem, 7vw, 3.15rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    max-width: 30ch;
+  }
+
+  .lede em {
+    font-style: normal;
+    background: linear-gradient(100deg, var(--brand-b), var(--brand-c));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  p.sub {
+    margin: 0 0 2.25rem;
+    font-size: clamp(1.02rem, 2.4vw, 1.16rem);
+    color: var(--ink-dim);
+    max-width: 46ch;
+  }
+
+  /* ---- Status pill ---- */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 2.75rem;
+    padding: 0.4rem 0.9rem 0.4rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg-soft);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-dim);
+    letter-spacing: 0.01em;
+  }
+
+  .status__dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--brand-c);
+    box-shadow: 0 0 0 3px rgba(95, 184, 58, 0.18);
+  }
+
+  /* ---- Contact ---- */
+  .contact {
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .contact__label {
+    margin: 0 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(43, 179, 179, 0.55);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  a:hover { color: var(--brand-b); border-bottom-color: var(--brand-b); }
+
+  a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .contact a { font-size: 1.08rem; }
+
+  /* ---- Footer ---- */
+  footer {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding: 3.5rem 0 2rem;
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+  }
+
+  footer p { margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img class="brand__mark" src="/favicon.svg" alt="" width="44" height="44">
+      <p class="brand__name">seven<b>X</b>three</p>
+    </div>
+
+    <span class="status"><span class="status__dot" aria-hidden="true"></span>In active development</span>
+
+    <h2 class="lede">A platform for working with <em>spoken audio</em>.</h2>
+
+    <p class="sub">
+      We build software for capturing, transcribing, and reviewing speech.
+      More about the platform will be shared here as it becomes available.
+    </p>
+  </header>
+
+  <main class="contact">
+    <p class="contact__label">Contact</p>
+    <p><a href="mailto:support@sevenxthree.com">support@sevenxthree.com</a></p>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 sevenXthree. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
