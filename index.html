@@ -27,10 +27,41 @@
     --line: rgba(255, 255, 255, 0.10);
     --ink: #eef3f8;
     --ink-dim: #93a4b8;
-    --brand-a: #1f6fb2;
-    --brand-b: #2bb3b3;
-    --brand-c: #5fb83a;
-    --focus: #2bb3b3;
+
+    /* The sevenXthree brand ramp.
+       OWNED BY packages/ui/src/theme.ts (BRAND) in the speech-platform monorepo.
+       These are copies; anything here that disagrees with that file is a bug.
+
+       This file used to hold #1f6fb2 / #2bb3b3 / #5fb83a — not one of them a
+       brand colour, each a desaturated approximation with lime missing entirely.
+       That mattered beyond this page: the iOS app copied these three in good
+       faith, Android mirrored iOS, and both app icons were built from them, so
+       four downstream copies were wrong because this one was. Fix the monorepo
+       token first and copy from there, never from here.
+
+       All four are listed even though --brand-a has no direct use on this page:
+       clipped text takes --brand-a-text below, and the blue glow takes the
+       channel triple. The ramp is only legible as a set, and this file is what
+       downstream copies get read from, so the reference value stays. */
+    --brand-a: #0073d6;  /* BRAND.blue  — reference; see --brand-a-text */
+    --brand-b: #00b7e8;  /* BRAND.cyan  */
+    --brand-c: #1ecc5a;  /* BRAND.green */
+    --brand-d: #66d132;  /* BRAND.lime  */
+
+    /* The same colours as channel triples. The translucent glow layers used to
+       hand-write rgba(31, 111, 178, …), which is how they silently kept the old
+       values even where a var would have been updated. */
+    --brand-a-rgb: 0 115 214;
+    --brand-b-rgb: 0 183 232;
+    --brand-c-rgb: 30 204 90;
+
+    /* Gradient-clipped text on this dark ground takes the tinted blue, matching
+       BRAND_GRADIENT_TEXT. BRAND.blue itself is 3.89:1 on #0d1420 — over the 3:1
+       large-text floor but under 4.5:1 — where this is 6.21:1 and safe at any
+       size. */
+    --brand-a-text: #2e9bf0;
+
+    --focus: #00b7e8;
   }
 
   * { box-sizing: border-box; }
@@ -56,9 +87,9 @@
     inset: -20% -10% auto -10%;
     height: 70vh;
     background:
-      radial-gradient(50% 60% at 22% 0%, rgba(31, 111, 178, 0.30), transparent 70%),
-      radial-gradient(45% 55% at 68% 8%, rgba(43, 179, 179, 0.22), transparent 72%),
-      radial-gradient(40% 50% at 92% 0%, rgba(95, 184, 58, 0.14), transparent 70%);
+      radial-gradient(50% 60% at 22% 0%, rgb(var(--brand-a-rgb) / 0.30), transparent 70%),
+      radial-gradient(45% 55% at 68% 8%, rgb(var(--brand-b-rgb) / 0.22), transparent 72%),
+      radial-gradient(40% 50% at 92% 0%, rgb(var(--brand-c-rgb) / 0.14), transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -98,7 +129,13 @@
 
   .brand__name b {
     font-weight: 600;
-    background: linear-gradient(100deg, var(--brand-a), var(--brand-b) 55%, var(--brand-c));
+    /* background-IMAGE, not the `background` shorthand: the shorthand resets
+       background-clip, and the letter then paints as a coloured block instead of
+       a coloured glyph. Stops sit at 0/44/72/100 — the ramp's real positions,
+       measured off the wordmark artwork — not at even thirds, which is what made
+       the ramp read green. */
+    background-image: linear-gradient(100deg,
+      var(--brand-a-text) 0%, var(--brand-b) 44%, var(--brand-c) 72%, var(--brand-d) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -115,7 +152,7 @@
 
   .lede em {
     font-style: normal;
-    background: linear-gradient(100deg, var(--brand-b), var(--brand-c));
+    background-image: linear-gradient(100deg, var(--brand-b), var(--brand-c));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -142,7 +179,7 @@
   a {
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid rgba(43, 179, 179, 0.55);
+    border-bottom: 1px solid rgb(var(--brand-b-rgb) / 0.55);
     padding-bottom: 1px;
     transition: color 0.15s ease, border-color 0.15s ease;
   }

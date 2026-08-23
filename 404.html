@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0d1420">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-  :root { --bg:#0d1420; --ink:#eef3f8; --ink-dim:#93a4b8; --brand-b:#2bb3b3; }
+  :root { --bg:#0d1420; --ink:#eef3f8; --ink-dim:#93a4b8; --brand-b:#00b7e8; --brand-b-rgb:0 183 232; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
@@ -34,7 +34,7 @@
   a {
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid rgba(43, 179, 179, 0.55);
+    border-bottom: 1px solid rgb(var(--brand-b-rgb) / 0.55);
     padding-bottom: 1px;
   }
   a:hover { color: var(--brand-b); border-bottom-color: var(--brand-b); }
