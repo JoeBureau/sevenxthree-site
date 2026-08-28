@@ -206,10 +206,6 @@
 
   footer p { margin: 0; }
 
-  /* The open-source attribution. Served by Studio rather than duplicated here:
-     it is generated from the real dependency graphs and one copy cannot drift. */
-  footer .footer-links { margin-top: 0.6rem; }
-
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; }
   }
@@ -235,10 +231,14 @@
 
 <footer>
   <div class="wrap">
+    <!-- No third-party notices link. Attribution attaches to distribution, and
+         this page distributes nothing: inline CSS, a system font stack, our own
+         favicon, no JavaScript, no dependencies. The obligation belongs to the
+         artifacts that actually ship code — the iOS and Android apps, the Chrome
+         extension, and the Studio and Ops bundles — and each of those now
+         carries its own notice listing only what it contains. Linking here put a
+         legal document on a surface that owes none. -->
     <p>&copy; 2026 sevenXthree. All rights reserved.</p>
-    <p class="footer-links">
-      <a href="https://studio.sevenxthree.com/legal/notices">Third-party notices</a>
-    </p>
   </div>
 </footer>
 
