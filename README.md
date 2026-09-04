@@ -1,31 +1,11 @@
 # sevenxthree-site
 
 Public marketing site for **sevenxthree.com**, served by GitHub Pages directly
-from `main`. Still deliberately minimal — a single static page, no build step, no
-dependencies, no JavaScript — but no longer a holding page: since 2026-09-04 it
-carries the capability pitch and the account-creation call to action.
+from `main`. Deliberately minimal for now: a single static landing page, no build
+step, no dependencies, no JavaScript.
 
 This repo is **separate from the `speech-platform` monorepo** and from the iOS
 app repo. Nothing here is deployed by `infra/deploy/deploy_changed.sh`.
-
-## Why this page matters more than it looks
-
-The free tier was retired on 2026-09-04 (`docs/pricing.md` in the monorepo), and
-the phone apps may carry **no signup, no link and no plan copy** — an in-app route
-to a signup that leads to a subscription is prohibited steering under Google
-Play's Payments policy, and a "call to action for purchase" under App Store
-3.1.3(f). Nobody can become a customer by browsing an app store either, because a
-stranger who installs the app cannot use it.
-
-**So this page is the entire top of the funnel, and the only one.** Two
-consequences for anyone editing it:
-
-- **The signup call to action is load-bearing.** If it breaks, there is no other
-  way into the product. It points at `studio.sevenxthree.com/register`.
-- **Prices are not here yet, and that is deliberate twice over.** Connect's price
-  is undecided (`pricing.md` §11 q.5), and keeping the commercial surface on its
-  own page rather than the one the apps name is the safer reading of both stores'
-  rules. When plans are published they get their own page.
 
 ## Layout
 

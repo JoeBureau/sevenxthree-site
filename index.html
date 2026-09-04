@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sevenXthree — speech recognition trained on one voice</title>
-<meta name="description" content="SevenXThree trains speech recognition on one person's own voice, with a communication board underneath it. For people with atypical speech, and the families who support them.">
+<title>sevenXthree — Coming soon</title>
+<meta name="description" content="sevenXthree — coming soon.">
 <link rel="canonical" href="https://sevenxthree.com/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0d1420">
@@ -12,11 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sevenxthree.com/">
 <meta property="og:site_name" content="sevenXthree">
-<meta property="og:title" content="sevenXthree — speech recognition trained on one voice">
-<meta property="og:description" content="Speech recognition trained on one person's own voice, with a communication board underneath it.">
+<meta property="og:title" content="sevenXthree — Coming soon">
+<meta property="og:description" content="sevenXthree — coming soon.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sevenXthree — speech recognition trained on one voice">
-<meta name="twitter:description" content="Speech recognition trained on one person's own voice, with a communication board underneath it.">
+<meta name="twitter:title" content="sevenXthree — Coming soon">
+<meta name="twitter:description" content="sevenXthree — coming soon.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -194,139 +194,6 @@
 
   .contact a { font-size: 1.08rem; }
 
-  /* ---- Hero sub ---- */
-  .sub {
-    margin: 0 0 clamp(2.5rem, 7vh, 3.5rem);
-    max-width: 34rem;
-    font-size: clamp(1.05rem, 3.4vw, 1.2rem);
-    color: var(--ink-dim);
-  }
-
-  .sub b { color: var(--ink); font-weight: 600; }
-
-  /* ---- Sections ---- */
-  section { padding-top: clamp(2.5rem, 7vh, 4rem); }
-
-  .eyebrow {
-    margin: 0 0 1.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-  }
-
-  /* One column on a phone, two where there is room. No media-query breakpoint:
-     `auto-fit` with a min track does the same job and cannot disagree with the
-     wrap's max-width. */
-  .grid {
-    display: grid;
-    gap: clamp(1.5rem, 4vw, 2.25rem);
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  }
-
-  .item h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .item p { margin: 0; color: var(--ink-dim); }
-
-  /* The accent rule, the same device the login cards use. Lime is decoration on
-     a dark ground, which is what this is. */
-  .item h3::before {
-    content: "";
-    display: block;
-    width: 1.75rem;
-    height: 3px;
-    margin-bottom: 0.85rem;
-    border-radius: 2px;
-    background: var(--brand-d);
-  }
-
-  /* ---- Steps ---- */
-  .steps { counter-reset: step; list-style: none; margin: 0; padding: 0; }
-
-  .steps li {
-    counter-increment: step;
-    position: relative;
-    padding-left: 2.6rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .steps li:last-child { margin-bottom: 0; }
-
-  .steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: -0.1rem;
-    width: 1.75rem;
-    height: 1.75rem;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    border: 1px solid rgb(var(--brand-b-rgb) / 0.5);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--brand-b);
-  }
-
-  .steps b { display: block; font-weight: 600; }
-  .steps span { color: var(--ink-dim); }
-
-  /* ---- Call to action ---- */
-  .cta {
-    margin-top: clamp(3rem, 8vh, 4.5rem);
-    padding: clamp(1.75rem, 5vw, 2.5rem);
-    border: 1px solid var(--line);
-    border-radius: 1rem;
-    background: rgb(var(--brand-a-rgb) / 0.07);
-  }
-
-  .cta h2 {
-    margin: 0 0 0.5rem;
-    font-size: clamp(1.35rem, 4.5vw, 1.65rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .cta p { margin: 0 0 1.5rem; color: var(--ink-dim); }
-
-  /* The button is the one anchor on the page that is not underlined text, so it
-     resets the global `a` rule rather than inheriting it. */
-  .button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border: 0;
-    border-bottom: 0;
-    border-radius: 0.6rem;
-    background-image: linear-gradient(100deg, var(--brand-a) 0%, var(--brand-b) 100%);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    /* A 44px touch target, the same floor the apps hold themselves to. */
-    min-height: 44px;
-    line-height: 1.65;
-  }
-
-  .button:hover { color: #fff; filter: brightness(1.08); }
-
-  .cta__after { margin: 1.25rem 0 0; font-size: 0.92rem; }
-
-  /* ---- Availability ---- */
-  .note {
-    margin-top: clamp(2.5rem, 7vh, 3.5rem);
-    padding: 1rem 1.15rem;
-    border-left: 3px solid rgb(var(--brand-b-rgb) / 0.5);
-    font-size: 0.92rem;
-    color: var(--ink-dim);
-  }
-
-  .note p { margin: 0; }
-
   /* ---- Footer ---- */
   footer {
     position: relative;
@@ -353,142 +220,12 @@
       <p class="brand__name">seven<b>X</b>three</p>
     </div>
 
-    <h1 class="lede">Built so other people can <em>understand you</em>.</h1>
-
-    <p class="sub">
-      SevenXThree trains speech recognition on <b>one person's own voice</b> —
-      their real recordings, not a generic model — and puts a communication board
-      underneath it for the days it is not enough.
-    </p>
+    <h1 class="lede"><em>Coming soon</em><span class="lede__dots" aria-hidden="true">...</span></h1>
   </header>
 
-  <main>
-    <section aria-labelledby="what">
-      <p class="eyebrow" id="what">What it is</p>
-      <div class="grid">
-        <div class="item">
-          <h3>A model for one voice</h3>
-          <p>
-            Recordings a caregiver approves train a model on the primary user's
-            own speech. It retrains as their speech changes, so it keeps up with
-            a growing child or a progressive condition.
-          </p>
-        </div>
-        <div class="item">
-          <h3>A board that stays underneath</h3>
-          <p>
-            Tap a phrase or say your own. The board works on every device and is
-            there on the days recognition is unsure — a communication tool whose
-            only input path can fail is not one a family can rely on.
-          </p>
-        </div>
-        <div class="item">
-          <h3>Practice that does double duty</h3>
-          <p>
-            Scenarios, games and conversation are how the recordings accumulate.
-            Practising and building the model are one activity, not two.
-          </p>
-        </div>
-        <div class="item">
-          <h3>Everyone who helps, on one board</h3>
-          <p>
-            Invite family, therapists and teachers. The board and its settings
-            stay in sync across their devices.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="how">
-      <p class="eyebrow" id="how">How it works</p>
-      <ol class="steps">
-        <li>
-          <b>Record</b>
-          <span>
-            The primary user speaks; whoever supports them reviews the audio and
-            approves the transcript in Studio, on the web.
-          </span>
-        </li>
-        <li>
-          <b>Train</b>
-          <span>
-            <!-- Deliberately not "your model is ready at 500 recordings". The
-                 learning-curve study behind that number is n=1 and scores far
-                 worse on short utterances than the headline suggests, so the
-                 honest promise is improvement over time rather than a finish
-                 line. See docs/ml/learning-curve-findings.md and pricing.md §5
-                 in the speech-platform monorepo. -->
-            The first model builds once there are enough approved recordings, and
-            it gets better every week you record.
-          </span>
-        </li>
-        <li>
-          <b>Be understood</b>
-          <span>
-            Speech Companion types what they say into any app on a phone or
-            tablet, and the Chrome extension does the same beside any text box on
-            the web.
-          </span>
-        </li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="apps">
-      <p class="eyebrow" id="apps">What you get</p>
-      <div class="grid">
-        <div class="item">
-          <h3>Speech Companion</h3>
-          <p>
-            iPhone, iPad and Android. The board, the keyboard and the recognition,
-            wherever they are.
-          </p>
-        </div>
-        <div class="item">
-          <h3>Studio</h3>
-          <p>
-            The workbench, on the web. Review recordings, run practice, and watch
-            progress over months rather than sessions.
-          </p>
-        </div>
-        <div class="item">
-          <h3>The Chrome extension</h3>
-          <p>
-            The same recognition and the same board, next to any text box on any
-            website.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="cta">
-      <h2>Start with an account</h2>
-      <p>
-        Everything begins in Studio: it is where recordings are approved and where
-        the board is set up. The apps sign in to the same account, which is where
-        the board, the settings and the speech model live.
-      </p>
-      <a class="button" href="https://studio.sevenxthree.com/register">Create an account</a>
-      <p class="cta__after">
-        Already have one? <a href="https://studio.sevenxthree.com/login">Sign in to Studio</a>.
-      </p>
-    </div>
-
-    <div class="note">
-      <p>
-        <!-- Honest about where the product actually is: billing is not built
-             (StubBillingProvider takes no money) and no launch date is set
-             (pricing.md §11). Publishing a page that implies otherwise would be
-             the one thing this page must not do. -->
-        <b>Early access.</b> Creating a team starts a 30-day trial of everything
-        described here. Plans and pricing are being finalised and will get their
-        own page — until then, nothing is charged.
-      </p>
-    </div>
-
-    <section class="contact" aria-labelledby="contact">
-      <p class="contact__label" id="contact">Contact</p>
-      <p><a href="mailto:support@sevenxthree.com">support@sevenxthree.com</a></p>
-    </section>
+  <main class="contact">
+    <p class="contact__label">Contact</p>
+    <p><a href="mailto:support@sevenxthree.com">support@sevenxthree.com</a></p>
   </main>
 </div>
 
